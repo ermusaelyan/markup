@@ -4,8 +4,9 @@ import Header from "./assets/components/Header/Header.tsx";
 function App() {
   return (
     <main className={s.main}>
+        <Header />
         <div className={s.container}>
-            <Header />
+
         </div>
     </main>
   )

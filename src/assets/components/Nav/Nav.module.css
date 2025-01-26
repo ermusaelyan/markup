@@ -1,0 +1,15 @@
+.wrapper {
+    padding: 0.875rem 1.25rem;
+    width: 100%;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

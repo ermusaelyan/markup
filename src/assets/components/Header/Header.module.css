@@ -1,9 +1,25 @@
 .wrapper {
+    width: 100%;
+    padding: 0 1.25rem;
+
+    @media screen and (min-width: 1200px) {
+        padding: 0;
+        border-bottom: 1px solid var(--color-border);
+        position: relative;
+    }
+}
+
+.top {
     padding: 2rem 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (min-width: 1200px) {
+        padding: 1.8125rem 0 1.625rem;
+        border-bottom: 1px solid var(--color-border);
+    }
 }
 
 .button {
@@ -14,6 +30,10 @@
     justify-content: center;
     border: none;
     background-color: transparent;
+
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
 }
 
 .button span {
@@ -34,33 +54,17 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (min-width: 1200px) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .link svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center;
-}
-
-.search {
-
-}
-
-.search__button {
-    padding: 0.25rem;
-    width: 1.5625rem;
-    height: 1.5625rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-}
-
-.search__button svg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     object-position: center;
 }

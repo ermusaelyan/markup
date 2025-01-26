@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Header.module.css';
-import LogoIcon from "../../icons/LogoIcon.tsx";
-import SearchIcon from "../../icons/searchIcon.tsx";
+import LogoIcon from '../../icons/LogoIcon.tsx';
+import MobileMenu from '../MobileMenu/MobileMenu.tsx';
+import useWindowWidth from "../../../hooks/useWindowWidth.tsx";
+import Nav from "../Nav/Nav.tsx";
+import Search from "../../Search/Search.tsx";
 
-const Header = () => {
+const Header: React.FC = () => {
+    const { isDesktop} = useWindowWidth();
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+    const handleToggle = () => {
+        document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+        setIsMenuOpen((prevState) => !prevState);
+    };
+
+    const handleClose = () => {
+        document.body.style.overflow = 'auto';
+        setIsMenuOpen(false);
+    };
+
     return (
         <div className={s.wrapper}>
-            <button className={s.button}>
-                <span />
-                <span />
-                <span />
-            </button>
-            <a href="#" className={s.link}>
-                <LogoIcon />
-            </a>
-            <div className={s.search}>
-                <button className={s.search__button}>
-                    <SearchIcon />
+            <div className={s.top}>
+                <button onClick={handleToggle} className={s.button}>
+                    <span />
+                    <span />
+                    <span />
                 </button>
+                <a href="#" className={s.link}>
+                    <LogoIcon />
+                </a>
+                <Search />
             </div>
+            {isDesktop ? <Nav /> : <MobileMenu isOpen={isMenuOpen} onClose={handleClose} />}
         </div>
     );
 };

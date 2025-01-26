@@ -1,0 +1,154 @@
+.wrapper {
+    width: 100%;
+    list-style-type: none;
+
+    @media screen and (min-width: 1200px) {
+        width: max-content;
+    }
+}
+
+
+.wrapper:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+
+    @media screen and (min-width: 1200px) {
+        border-bottom: none;
+    }
+}
+
+.wrapper:not(:last-child) .button::after {
+    margin-left: 0.25rem;
+    content: '';
+    display: block;
+    width: 0.625rem;
+    height: 0.625rem;
+    background-image: url("./../../../../../assets/img/trigger.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: transform 0.2s ease;
+    background-position: center;
+
+    @supports (background-image: url("./../../../../../assets/img/trigger.svg")) {
+        background-image: url("./../../../../../assets/img/trigger.svg");
+    }
+}
+
+.button {
+    padding: 1rem 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+    text-align: start;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+
+    @media screen and (min-width: 1200px) {
+        width: max-content;
+        padding: 0 1rem;
+    }
+}
+
+
+.list {
+    margin-top: 0.875rem;
+    display: none;
+    min-width: 11rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    z-index: 3;
+}
+
+.list::before {
+    content: '';
+    width: calc(100% + 0.5rem);
+    height: calc(100% + 0.5rem);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.item {
+    list-style-type: none;
+}
+
+.item:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.link {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: inline-flex;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 0.8125rem;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: rgba(150, 150, 150);
+    transform: translateX(4px);
+}
+
+@media (hover: hover) {
+
+    .wrapper {
+        display: block;
+        position: relative;
+    }
+
+    .wrapper:hover .list {
+        display: block;
+    }
+
+    .wrapper:hover .button::after {
+        transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    .wrapper:hover::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 11rem;
+        height: 1.25rem;
+        z-index: 1;
+    }
+
+    .item {
+        position: relative;
+    }
+
+    .item::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+
+        width: 0.625rem;
+        height: 0.625rem;
+        background-image: url("./../../../../../assets/img/trigger.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transform: translateY(-50%) rotate(-90deg);
+        background-position: center;
+        pointer-events: none;
+
+        @supports (background-image: url("./../../../../../assets/img/trigger.svg")) {
+            background-image: url("./../../../../../assets/img/trigger.svg");
+        }
+    }
+}
