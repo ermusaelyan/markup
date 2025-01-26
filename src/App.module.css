@@ -3,6 +3,8 @@
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 1160px;
   padding: 0 1.25rem;
 }
 

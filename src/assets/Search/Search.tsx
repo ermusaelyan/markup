@@ -8,7 +8,11 @@ const Search = () => {
 
     return (
         <div className={s.wrapper}>
-            <button onClick={() => setIsOpen(prevState => !prevState)} className={s.button}>
+            <button
+                onClick={() => setIsOpen(prevState => !prevState)}
+                className={s.button}
+                aria-label="Search"
+            >
                 <SearchIcon />
             </button>
             <label className={classNames(s.label, {[s.open] : isOpen})}>

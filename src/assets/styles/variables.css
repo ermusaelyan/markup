@@ -1,8 +1,11 @@
 :root {
   --color-main: rgb(255, 255, 255);
   --color-main-7: rgba(255, 255, 255, 0.7);
-  --color-text: rgba(0, 0, 0);
-  --color-border: rgba(233, 233, 233);
+  --color-text: rgb(0, 0, 0);
+  --color-border: rgb(233, 233, 233);
+  --color-status: rgba(235, 0, 40);
+  --color-info: rgba(155, 155, 155);
+  --color-desc: rgba(146, 146, 146);
 }
 
 :root {

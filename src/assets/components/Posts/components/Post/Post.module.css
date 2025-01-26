@@ -1,0 +1,117 @@
+.wrapper {
+    width: 100%;
+    margin-bottom: 32px;
+
+    @media screen and (min-width: 768px) {
+        width: calc(50% - 16px);
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 48px;
+        width: calc(100% / 3 - 80px / 3);
+    }
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.image::after {
+    content: '';
+    display: block;
+    padding-top: 68.66%;
+}
+
+.picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.status {
+    margin: 1rem 0;
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 0.8125rem;
+    color: var(--color-status);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.875rem;
+}
+
+.info {
+    margin: 1rem 0;
+}
+
+.info span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 0.75rem;
+    color: var(--color-info);
+    display: inline-flex;
+    align-items: center;
+}
+
+.info span:first-child {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.info span:not(:last-child)::after {
+    content: '';
+    display: block;
+    margin: 0 0.3125rem;
+    width: 1px;
+    height: 1px;
+    border: 1px solid var(--color-info);
+    background-color: var(--color-info);
+    border-radius: 50%;
+}
+
+.desc {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: var(--color-desc);
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    word-wrap: break-word;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .wrapper:not(:nth-child(2n + 2)) {
+        margin-right: 32px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .wrapper:not(:nth-child(2n + 2)) {
+        margin-right: unset;
+    }
+
+    .wrapper:not(:nth-child(3n + 3)) {
+        margin-right: 40px;
+    }
+}
