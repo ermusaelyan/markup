@@ -9,7 +9,32 @@
     @media screen and (min-width: 1200px) {
         margin-bottom: 48px;
         width: calc(100% / 3 - 80px / 3);
+        cursor: pointer;
     }
+}
+
+.button {
+    width: 100%;
+    display: block;
+    text-align: start;
+    border: none;
+    background-color: transparent;
+}
+
+.modal {
+    width: 100%;
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.modal__desc {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-desc);
 }
 
 .image {
